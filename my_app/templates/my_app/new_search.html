@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2 style="text-align: center;">{{ search | title }}</h2>
+
+    <div class="row">
+        {% for post in final_postings %}
+            <div class="col s4">
+                <div class="card" style="height: 400px; overflow:hidden;">
+                    <div class="card-image" style="overflow:hidden;">
+                        <a href="{{ post.1 }}"><img style="height: 250px;" src="{{ post.3 }}" alt=""></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ post.0 }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{{ post.1 }}">View Listing: {{ post.2 }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %} 
